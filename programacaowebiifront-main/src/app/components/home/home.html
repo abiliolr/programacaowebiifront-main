@@ -1,2 +1,32 @@
-<h1>Bem-vindo!</h1>
-<p>Seu login foi realizado com sucesso.</p>
+<div class="home-container">
+  <div class="header">
+    <h1>Portal Acadêmico</h1>
+    <p>Selecione o painel correspondente ao seu perfil para continuar.</p>
+    <button class="btn-logout" (click)="logout()">Sair</button>
+  </div>
+
+  <div class="cards-container">
+
+    <!-- CARD ALUNO -->
+    <div class="card card-aluno" (click)="navigateTo('ALUNO')" [class.disabled]="userRole !== 'ALUNO' && userRole !== 'ADMIN'">
+      <div class="icon">🎓</div>
+      <h2>Painel do Aluno</h2>
+      <p>Acesse suas notas, boletim e perfil acadêmico.</p>
+    </div>
+
+    <!-- CARD PROFESSOR -->
+    <div class="card card-professor" (click)="navigateTo('PROFESSOR')" [class.disabled]="userRole !== 'PROFESSOR' && userRole !== 'ADMIN'">
+      <div class="icon">👨‍🏫</div>
+      <h2>Painel do Professor</h2>
+      <p>Gerencie alunos, lance notas e acompanhe turmas.</p>
+    </div>
+
+    <!-- CARD ADMIN -->
+    <div class="card card-admin" (click)="navigateTo('ADMIN')" [class.disabled]="userRole !== 'ADMIN'">
+      <div class="icon">⚙️</div>
+      <h2>Painel Administrativo</h2>
+      <p>Gerenciamento completo de usuários, cursos e sistema.</p>
+    </div>
+
+  </div>
+</div>
