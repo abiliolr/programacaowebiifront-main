@@ -1,63 +1,19 @@
-<div class="container">
-  <div class="sidebar">
-    <div class="sidebar-header">
-      <div class="logo-icon"></div>
-      <h2>Painel do Aluno</h2>
-    </div>
-    <nav class="sidebar-nav">
-      <ul>
-        <li><a href="#" class="active">Curso</a></li>
-        <li><a href="#">Disciplinas</a></li>
-        <li><a href="#">Notas</a></li>
-      </ul>
-    </nav>
-
-    <button class="btn-logout">Sair</button>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-icon"></div>
+    <h2>Área do Aluno</h2>
   </div>
 
-  <div class="container-aluno">
-    <div class="disciplinas">
-      <button class="btn-disciplina" (click)="mostrarCard('Arquitetura de Computadores')">
-        Arquitetura de Computadores
-      </button>
-      <button class="btn-disciplina" (click)="mostrarCard('Programação Orientada a Objetos')">
-        Programação Orientada a Objetos
-      </button>
-      <button class="btn-disciplina" (click)="mostrarCard('Banco de Dados')">Banco de Dados</button>
-      <button class="btn-disciplina" (click)="mostrarCard('Estrutura de Dados')">
-        Estrutura de Dados
-      </button>
-      <button class="btn-disciplina" (click)="mostrarCard('Gestao de Processos')">
-        Gestão de Processos
-      </button>
-    </div>
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a routerLink="/aluno/boletim" routerLinkActive="active">Boletim</a></li>
+      <li><a routerLink="/aluno/perfil" routerLinkActive="active">Meu Perfil</a></li>
+    </ul>
+  </nav>
 
-    <div class="card" *ngIf="dados">
-      <h2>{{ dados.disciplina }}</h2>
+  <button class="btn-logout" (click)="logout()">Sair</button>
+</div>
 
-      <div class="info-grid">
-        <div class="info-bloco notas">
-          <h3>Notas</h3>
-          <p><strong>1º Bimestre:</strong> {{ dados.nota1 }}</p>
-          <p><strong>2º Bimestre:</strong> {{ dados.nota2 }}</p>
-          <p><strong>Média Atual:</strong> {{ dados.media }}</p>
-          <p><strong>Nota Necessária:</strong> {{ dados.notaNecessaria }}</p>
-        </div>
-
-        <div class="info-bloco faltas">
-          <h3>Faltas</h3>
-          <p><strong>Faltas:</strong> {{ dados.faltas }}</p>
-          <p><strong>Restantes:</strong> {{ dados.faltasRestantes }}</p>
-          <p><strong>Presenças:</strong> {{ dados.presencas }}</p>
-        </div>
-
-        <div class="info-bloco provas">
-          <h3>Provas Marcadas</h3>
-          <ul>
-            <li *ngFor="let prova of dados.horariosProvas">{{ prova }}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="main-content">
+  <router-outlet></router-outlet>
 </div>
