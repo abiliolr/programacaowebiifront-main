@@ -28,9 +28,6 @@ export class AuthService {
       httpOptions
     ).pipe(
       tap((data: any) => {
-        // Assume data contains user info or we infer it.
-        // For simulation purposes, if the backend doesn't return role, we'll need to set it in the component.
-        // But if it does, we save it here.
         if (data) {
           this.saveUser(data);
         }
@@ -68,10 +65,7 @@ export class AuthService {
 
   getRole(): string {
     const user = this.getUser();
-    // Simulate role if not present or explicit
     if (user && user.role) return user.role;
-    // Fallback/Simulation logic can be here or in component.
-    // Let's assume the user object might have 'perfil' or 'role'.
     return '';
   }
 

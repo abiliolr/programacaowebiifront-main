@@ -22,8 +22,6 @@ import { AlunoDashboardComponent } from './components/aluno/dashboard/dashboard.
 import { AlunoBoletimComponent } from './components/aluno/boletim/boletim.component';
 import { AlunoPerfilComponent } from './components/aluno/perfil/perfil.component';
 
-import { AuthGuard } from './guards/auth.guard';
-
 export const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
@@ -34,8 +32,6 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'ADMIN' },
     children: [
       { path: '', component: AdminWelcomeComponent },
       { path: 'professores/cadastro', component: CadastroProfessorComponent },
@@ -49,8 +45,6 @@ export const routes: Routes = [
   {
     path: 'professor',
     component: ProfessorComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'PROFESSOR' },
     children: [
       { path: '', component: ProfessorDashboardComponent },
       { path: 'alunos', component: ProfessorAlunosComponent },
@@ -62,8 +56,6 @@ export const routes: Routes = [
   {
     path: 'aluno',
     component: AlunoComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'ALUNO' },
     children: [
       { path: '', component: AlunoDashboardComponent },
       { path: 'boletim', component: AlunoBoletimComponent },
