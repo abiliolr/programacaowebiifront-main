@@ -1,5 +1,6 @@
 <div class="sidebar">
   <div class="sidebar-header">
+    <div class="logo-icon"></div>
     <h2>Painel do Administrador</h2>
   </div>
 
@@ -15,7 +16,7 @@
   <button class="btn-logout" (click)="logout()">Sair</button>
 </div>
 
-<!-- Mensagem centralizada -->
+<!-- Conteúdo Dinâmico -->
 <div class="main-content">
-  <h1>Bem-vindo ao painel administrativo!</h1>
+  <router-outlet></router-outlet>
 </div>
