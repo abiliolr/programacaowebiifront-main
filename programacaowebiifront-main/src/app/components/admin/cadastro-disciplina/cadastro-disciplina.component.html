@@ -1,0 +1,39 @@
+<div class="container-disciplina">
+  <div class="form-container">
+    <h2>Cadastro de Disciplina</h2>
+
+    <form [formGroup]="disciplinaForm" (ngSubmit)="enviarFormulario()">
+
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" formControlName="nome" placeholder="Digite o nome da disciplina" required>
+      </div>
+
+      <div class="form-group">
+        <label for="curso">Curso:</label>
+        <select id="curso" formControlName="cursoId" required>
+          <option value="" disabled>Selecione o curso</option>
+          <option *ngFor="let c of cursos" [value]="c.id">{{ c.nome }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="professor">Professor:</label>
+        <select id="professor" formControlName="professorId" required>
+          <option value="" disabled>Selecione o professor</option>
+          <option *ngFor="let p of professores" [value]="p.id">{{ p.nome }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" [disabled]="disciplinaForm.invalid">Cadastrar</button>
+      </div>
+
+    </form>
+
+    <div class="mensagens">
+      <p class="sucesso" *ngIf="mensagemSucesso">{{ mensagemSucesso }}</p>
+      <p class="erro" *ngIf="mensagemErro">{{ mensagemErro }}</p>
+    </div>
+  </div>
+</div>

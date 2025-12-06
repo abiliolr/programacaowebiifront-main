@@ -1,0 +1,123 @@
+/* Container centralizado */
+.container-professor {
+  display: flex;
+  align-items: center;        /* vertical */
+  justify-content: center;    /* horizontal */
+  min-height: 100vh;          /* altura da tela inteira */
+  width: 100vw;               /* largura da tela inteira */
+  padding: 0;
+  background: #f2f2f7;        /* padrão do projeto */
+  position: relative;         /* importante para sobrepor sidebar */
+  z-index: 1;
+}
+
+/* Formulário */
+.form-container {
+  border-radius: 12px;
+  padding: 30px 36px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #143c69;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #dbe3ee;
+  padding-bottom: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f7f8fa;
+  color: #1a1a1a;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #143c69;
+  box-shadow: 0 0 8px rgba(20, 60, 105, 0.2);
+}
+
+.form-group button {
+  background: #143c69;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%;
+}
+
+.form-group button:hover {
+  background: #0f2e4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.mensagens {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.mensagens p.sucesso {
+  color: #08632e;
+  font-weight: 600;
+}
+
+.mensagens p.erro {
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .form-container {
+    width: 95%;
+    padding: 16px 20px;
+  }
+}
