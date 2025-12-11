@@ -1,69 +1,131 @@
-
-:host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+/* Centraliza tudo no centro da tela */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  padding: 20px;
 }
 
+/* Container do login */
 .login-container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #333;
+/* Área do logo */
+.logo-area {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0 16px 0; 
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; 
+.logo-area i {
+  font-size: 50px;
+  color: #4f46e5;
+  margin-bottom: 10px;
 }
 
+.logo-area h1 {
+  margin: 5px 0 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 4px rgba(79, 70, 229, 0.4);
+}
+
+/* Botão */
 button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #45a049;
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #4f46e5;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: 600;
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background: #9ca3af;
+  cursor: not-allowed;
 }
 
+button:not(:disabled):hover {
+  background: #4338ca;
+}
 
+/* Mensagem de erro */
 .error-message {
-    color: red;
-    background-color: #ffe0e0;
-    border: 1px solid red;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
+  color: #ef4444;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-label {
-    display: block;
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 2px;
+/* Link de registro */
+.register-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #555;
+}
+
+.register-text a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
